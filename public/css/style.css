@@ -1,0 +1,499 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.navbar{
+    /* margin-bottom: 10px; */
+    padding: 12px 20px 12px 20px;
+    background-color: white;
+}
+
+.nav-link{
+    font-size: medium;
+    font-weight: 500 !important;
+}
+
+.nav-link:hover{
+    font-size: medium;
+    font-weight: 500;
+    color:#222222;
+}
+
+.fixed-category {
+    z-index: 10;
+    background-color: #ffffff;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.nav .nav-link{
+    flex: 1 1 auto; /* Ensures even spacing */
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-tabs p{
+    font-size: small;
+    font-weight: 500;
+    color: #222222;
+}
+
+/* Custom styles for active nav-tabs and their <p> tags */
+.nav-underline .nav-tabs.active p,
+.nav-underline .nav-tabs.show>.nav-link p {
+    font-size: small;
+    font-weight: bolder;
+    color: #222222;
+}
+
+.nav-underline .nav-tabs:focus, .nav-underline .nav-tabs:hover, .nav-underline .nav-tabs.active, .nav-underline .show>.nav-link{
+    border-bottom-color: #f2424d;
+}
+
+.navbar-Tab{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 1rem;
+}
+
+.fa-compass{
+    font-size: 2rem;
+}
+
+.navbar-brand{
+    display: flex;
+    font-weight: bold;
+}
+
+.containers{
+    margin: 0rem 2.3rem 2.5rem 2.3rem;
+}
+
+.footer{
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0px;
+    padding: 0rem 4rem 0rem 4rem;
+    font-size: 0.9rem;
+    background-color: #ebebeb;
+    z-index: 100;
+}
+
+.f-social{
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.f-social i{
+    cursor: pointer;
+}
+
+.f-links{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.f-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-links a:hover{
+    text-decoration: underline;
+}
+
+/* Listings css */
+
+.all-listings-section{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.all-listings {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.8rem; 
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+  
+.listings-card {
+    width: 296px;
+    border: none;
+    margin-bottom: 2.8rem;
+}
+
+.card-link{
+    text-decoration: none;
+    color: black;
+}
+
+.img-card{
+    border-radius: 1rem;
+    height: 19rem;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px #2222227e;
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    height: 19rem;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    transition: all 100ms ease-in-out;
+}
+
+.card-body{
+    padding: 8px 2px 2px 3px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.card-link:hover .card-img-top{
+    transform: scale(1.06);
+}
+
+
+/* Add listing form */
+
+.form-add{
+    display: flex;
+    justify-content: center;
+}
+
+.form-add-in{
+    width: 50%;
+}
+
+.submit-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn{
+    background-color: #f2424d;
+    color: white;
+    box-shadow: 2px 2px #222222;
+}
+
+.submit-btn:hover{
+    background-color: #f2424d;
+    color: white;
+    border: #f2424d solid 1px;
+    box-shadow: 2px 2px 5px #222222;
+}
+
+.submit-btn:active{
+    background-color: #e6404b !important;
+    opacity: 0.95 !important;
+    color: white !important;
+    border: #f2424d solid 1px !important;
+    box-shadow: 2px 2px 5px #222222 !important;
+}
+
+.form-check-input{
+    border: #2222228f solid 1px;
+}
+
+
+/* Show listing */
+
+.show-listing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-listing-in{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+}
+
+.show-listing-details{
+    display: flex;
+    gap: 3rem;
+}
+
+.show-card-img{
+    display: flex;
+    justify-content: center;
+}
+
+.show-card-img img{
+    border-radius: 1rem;
+    height: 26rem;
+    width: 38rem;
+    object-fit: cover;
+    object-position: 50% 80%;
+    box-shadow: 1px 1px 5px #2222227e;
+}
+
+.show-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    flex : 1 1 auto;
+}
+
+.show-card-ctg-hr{
+    display: none;
+}
+
+.show-desc{
+    line-height: 1.4;
+    word-spacing: 2px;
+}
+
+.show-func-btns{
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.show-func-btns a, 
+.show-func-btns form{
+    width: 20%
+}
+
+.containerBody .footer{
+    position: static !important;
+}
+
+
+/* Review Page */
+.review-card{
+    padding: 10px;
+}
+
+.review-comment{
+    line-height: 1.4;
+    word-spacing: 1.8px;
+}
+
+/* Map style */
+
+.show-map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-map p{
+    font-size: larger;
+    font-weight: 500;
+    word-spacing: 2px;
+    margin: 0.8rem 0rem 1.6rem 0rem;
+}
+
+#map{
+    height: 70vh;
+    width: 85%;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+/* Error page */
+
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-spacing: 3px;
+}
+
+.alert .err-msg{
+    font-weight: 600;
+}
+
+/* Flash msg styling */
+
+.flash-msg-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.flash-msg{
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0px;
+}
+
+
+
+/* -------------------------------- Media Queries --------------------------- */
+
+@media (max-width : 1110px){
+    .show-card-img{
+        display: flex;
+        justify-content: center;
+        /* width: 30rem; */
+    }
+
+    .show-card-img img{
+        border-radius: 1rem;
+        width: 30rem;
+        object-fit: cover;
+        object-position: 50% 80%;
+        box-shadow: 1px 1px 5px #2222227e;
+    }
+
+    .show-func-btns a,
+    .show-func-btns form {
+        width: 30%
+    }
+
+}
+
+@media (max-width : 900px){
+    .show-listing-details{
+        display: flex;
+        flex-direction: column;
+        margin: 0px 5px;
+    }
+
+    .show-card-img{
+        display: flex;
+        justify-content: center;
+    }
+
+    .show-card-img img{
+        border-radius: 1rem;
+        height: 28rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 70%;
+        box-shadow: 1px 1px 5px #2222227e;
+    }
+
+    .show-func-btns a,
+    .show-func-btns form {
+        width: 25%
+    }
+}
+
+@media (max-width : 768px){
+    .all-listings{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .footer{
+        height: 6.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        font-size: small;
+        padding: 0px;
+        position: static;
+    }
+
+    .f-social i{
+        font-size: medium;
+    }
+
+    .containers{
+        margin: 0rem 1rem 0rem 1rem;
+    }
+
+    .form-add-in{
+        width: 95%;
+    }
+
+    .show-listing-details{
+        flex-wrap: wrap;
+        margin: 0px 5px;
+    }
+
+    .show-func-btns a,
+    .show-func-btns form {
+        width: 25%
+    }
+}
+
+@media (max-width : 550px) {
+    .show-card-img img{
+        border-radius: 1rem;
+        height: 20rem;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% 80%;
+        box-shadow: 1px 1px 5px #2222227e;
+    }
+
+    .navbar{
+        /* margin-bottom: 10px; */
+        padding: 12px 4px 12px 6px;
+        background-color: white;
+    }
+
+    .show-func-btns a,
+    .show-func-btns form {
+        width: 30%
+    }
+
+    .flash-msg{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin: 0px;
+    }
+
+    .show-card-ctg{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .show-card-ctg-hr{
+        display: block;
+    }
+
+    .all-listings-section{
+        display: flex;
+        justify-content: center;
+    }
+
+    #map{
+        height: 70vh;
+        width: 96%;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media (max-width : 292px) {
+    .show-func-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0px;
+    }
+
+    .show-func-btns a, .show-func-btns form{
+        width: 100%;
+    }
+}
+
+
+

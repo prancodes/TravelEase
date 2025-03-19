@@ -1,0 +1,98 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body class="containerBody">
+  <div class="form-add">
+    <div class="form-add-in">
+      <h4 style="padding: 1rem 0rem 0rem 0rem;"><strong>Add new Listing</strong></h4><hr>
+
+      <form action="/listings" method="post" class="needs-validation mb-3" novalidate enctype="multipart/form-data">
+        <div class="mb-4">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" name="listing[title]" placeholder="Spacious Apartment with Modern Amenities" class="form-control" required />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="desc" class="form-label">Description</label>
+          <textarea name="listing[description]" id="desc" placeholder="A fully-furnished 2-bedroom apartment with a stunning city view and close to public transport." class="form-control" required></textarea>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="img-file" class="form-label">Upload Image</label>
+          <input type="file" id="img-file" name="listing[image]" class="form-control" accept=".jpg, .jpeg, .png">
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">
+            Please provide a valid Image format (.jpg, .png, .jpeg) or leave blank.
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-4 col-md-6">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" id="category" name="listing[category]" required>
+              <option selected disabled value="">Select a category</option>
+              <option value="Beachfront">Beachfront</option>
+              <option value="City">City</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Historic">Historic</option>
+              <option value="Luxury">Luxury</option>
+              <option value="Nature">Nature</option>
+              <option value="Tropical">Tropical</option>
+              <option value="Ski">Ski</option>
+              <option value="Safari">Safari</option>
+            </select>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Oops! Please pick a category
+            </div>
+          </div>
+
+          <div class="mb-4 col-md-6">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" min="0" id="price" name="listing[price]" placeholder="Price in Indian Rupees" class="form-control" required />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">
+              Please provide the price in (INR)
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="mb-4 col-md-7">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" id="location" name="listing[location]" placeholder="Mumbai, Maharashtra" class="form-control" required />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid Location.</div>
+          </div>
+
+          <div class="mb-4 col-md-5">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" id="country" name="listing[country]" placeholder="India" class="form-control" required autocomplete="country" />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please provide a valid Country.</div>
+          </div>
+        </div>
+
+        <div class="submit-form">
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+
+          <button class="btn w-md-50 submit-btn" type="submit">Add List</button>
+        </div>
+        
+        <br />
+      </form>
+    </div>
+  </div>
+
+</body>

@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') -%>
+
+<body class="containerBody">
+  <div class="form-add">
+    <div class="form-add-in">
+      <h4 style="padding: 1rem 0rem 0rem 0rem;"><strong>Sign Up / Register</strong></h4><hr>
+
+      <form action="/signup" method="post" class="needs-validation mb-3" novalidate>
+        <div class="mb-4">
+          <label for="email-id" class="form-label">Email</label>
+          <input type="email" id="email-id" name="user[email]" placeholder="Enter your email" class="form-control" required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide valid email</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="userName" class="form-label">Username</label>
+          <input type="text" id="userName" name="user[username]" placeholder="Create new username" class="form-control" required/>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Please provide username</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="pass" class="form-label">Password</label>
+          <input type="password" id="pass" name="user[password]" placeholder="Create new password" class="form-control" required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Password should be upto 8 characters</div>
+        </div>
+
+        <div class="submit-form">
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+              <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+
+          <button class="btn w-md-50 submit-btn" type="submit">Register</button>
+        </div>
+        
+        <br />
+      </form>
+    </div>
+  </div>
+
+</body>

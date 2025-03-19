@@ -1,0 +1,36 @@
+<div class="bg-body-light sticky-top navbar-Tab">
+  <nav class="navbar navbar-expand-md bg-body-light border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color: #fe424d" href="/"><i
+          class="fa-regular fa-compass"></i>&nbsp;&nbsp;TravelEase</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a id="explore-link" class="nav-link" href="/listings">Explore</a>
+          <a id="add-link" class="nav-link" href="/listings/add">Add Listing</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <% if (!currUser) { %>
+            <div class="d-flex align-items-center gap-3">
+              <a id="signup-link" class="btn btn-outline-success" href="/signup">SignUp</a>
+              <a id="login-link" class="btn btn-outline-success me-md-1" href="/login">Login</a>
+            </div>
+            <% } else { %>
+              <div class="d-flex align-items-center gap-2">
+                <a class="nav-link">@<%= currUser.username %></a>
+                <a class="btn btn-outline-danger me-1" href="/logout">Logout</a>
+              </div>
+              <% } %>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="fixed-category mx-2 py-1">
+    <%- include("../includes/category.ejs") %>
+  </div>
+
+</div>

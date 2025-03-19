@@ -1,0 +1,141 @@
+<% layout('/layouts/boilerplate') -%>
+
+  <body class="containerBody">
+    <div class="show-listing mt-3">
+      <div class="show-listing-in">
+        <div class="show-listing-details">
+          <div class="show-card-img">
+            <img src="<%= show.image.url %>" alt="img" />
+          </div>
+
+          <div class="show-card-text">
+            <div>
+              <p class="show-card-ctg">
+                <span>Owned by ~ <i><%= show.owner.username %></i>&nbsp;</span>
+                <b>[ <%= show.category %>  ]</b>
+                <hr class="show-card-ctg-hr">
+              </p>
+              <h2><b>
+                  <%= show.title %>
+                </b></h2>
+              <p class="show-desc">
+                <%= show.description %>
+              </p>
+              <br />
+              <!-- Our Price should be in Indian standard (i.e seperated by comma as 1,60,000),
+            we will use a function to represent our price in Indian Standard -->
+              <h5>
+                <b>&#8377; <%= show.price.toLocaleString("en-IN") %></b> / night
+              </h5>
+              <!-- &#8377; This is the symbol of rupees -->
+              <br />
+              <h5>
+                <i class="fa-solid fa-location-dot" style="color: #fe424d"></i>&nbsp;&nbsp;<%= show.location %> (<%=
+                    show.country %>)
+              </h5>
+            </div>
+
+            <div class="show-func-btns">
+              <a href="/listings/<%= show._id %>/edit" class="btn submit-btn">Edit</a>
+              <form action="/listings/<%= show._id %>?_method=DELETE" method="post">
+                <button class="btn submit-btn" style="width: 100%;">Delete</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Review section -->
+        <% if (currUser) { %>
+          <br>
+          <hr>
+          <div>
+            <h4>Leave a review!</h4><br>
+            <form action="/listings/<%= show._id %>/reviews" method="post" class="needs-validation" novalidate>
+              <div>
+                <label for="rating" class="form-label"><b>Give Rating</b></label>
+                <fieldset class="starability-grow">
+                  <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
+                    aria-label="No rating." />
+                  <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                  <label for="first-rate1" title="Terrible">1 star</label>
+                  <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                  <label for="first-rate2" title="Not good">2 stars</label>
+                  <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                  <label for="first-rate3" title="Average">3 stars</label>
+                  <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                  <label for="first-rate4" title="Very good">4 stars</label>
+                  <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                  <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+              </div><br>
+              <div class="form-floating">
+                <textarea class="form-control" name="review[comment]" placeholder="Leave a comment here" id="comment"
+                  style="height: 100px" required></textarea>
+                <label for="comment">Comments</label>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">
+                  Please share your feedback before submitting.
+                </div>
+              </div><br>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+          <% } %>
+            <br>
+            <!-- Map -->
+            <hr>
+            <div class="show-map">
+              <p><i class="fa-solid fa-map-location-dot fa-lg" style="color: #fe424d;"></i>&nbsp; Where you'll be..</p>
+              <div id="map"></div>
+            </div>
+
+            <!-- Review List -->
+            <% if (show.reviews.length> 0) { %>
+              <br><br>
+              <div class="card">
+                <h4 class="card-header feat-review"><b>Featured Reviews</b></h4>
+              </div>
+              <div class="row">
+                <% for (const review of show.reviews) { %>
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card review-card mt-3 px-3">
+                      <div class="card-body">
+                        <% if(review.author && review.author.username) { %>
+                          <h6 class="card-title"><strong>@<%= review.author.username %></strong></h6>
+                          <% } else { %>
+                            <h6 class="card-title"><strong><img
+                                  src="https://img.icons8.com/?size=100&id=HACyZrxr58xi&format=png&color=000000"
+                                  alt="delUser" width="22px">&nbsp; Anonymous</strong></h6>
+                            <% } %>
+                              <hr>
+                              <h6 class="card-text review-comment">
+                                <%= review.comment %>
+                              </h6>
+                              <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                              <form action="/listings/<%= show._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                method="post">
+                                <button class="btn btn-danger">Delete</button>
+                              </form><br>
+                              <div>
+                                <%= review.createdAt.getDate().toString().padStart(2, '0' ) %>-<%=
+                                    review.createdAt.toLocaleString('en-US', { month: 'short' }) %>-<%=
+                                      review.createdAt.getFullYear() %>
+                              </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+              </div>
+              <% } %>
+      </div>
+    </div>
+
+    <!-- Embed the mapToken and coordinates variables -->
+    <script>
+      const mapToken = `<%= process.env.MAP_TOKEN %>`;
+      const coordinates = <%- JSON.stringify(show.geometry.coordinates) %>;
+    </script>
+
+    <script src="/js/map.js"></script>
+  </body>
