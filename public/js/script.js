@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("copyLink").addEventListener("click", function () {
-    const url = "http://localhost:3000";
+    const url = "https://travelease.up.railway.app";
 
     navigator.clipboard
       .writeText(url)
