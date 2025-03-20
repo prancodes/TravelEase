@@ -453,7 +453,7 @@ body{
         display: flex;
         justify-content: left;
         align-items: center;
-        margin: 0px;
+        margin: 0rem 0.8rem 0rem 0.8rem;
     }
 
     .show-card-ctg{
