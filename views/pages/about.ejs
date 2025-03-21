@@ -1,4 +1,115 @@
 <% layout('/layouts/boilerplate') -%>
+
 <body>
-    <h2>...coming soon</h2>
+  <div class="container pb-lg-5 pb-4 pt-3">
+    <!-- Hero Section -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h1 class="display-5 fw-bold mb-3" style="color: #f2424d">About TravelEase</h1>
+        <h6 class="fw-medium" style="line-height: 1.4;">Discover Your Perfect Stay with TravelEase &nbsp; • Est. 2025</h6>
+      </div>
+    </div>
+
+    <!-- Vision Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="mb-3 fw-medium">Our Vision</h2>
+        <p class="fs-5">At TravelEase, we make finding your perfect stay simple and enjoyable. We help you find great places to stay - from City apartments to beautiful Villas.</p>
+        <p class="fs-5">We check every property to make sure it meets our high standards. Whether you need a place for a weekend or a longer stay, we're here to help you find the right home.</p>
+        <p class="fs-5">We're building a friendly community where hosts can share their properties and guests can find comfortable places to stay.</p>
+      </div>
+      <div class="col-md-6">
+        <img src="../images/travelEase-vision.jpeg" alt="travelEase-vision" class="img-fluid rounded shadow-lg">
+      </div>
+    </div>
+
+    <!-- Features Highlight -->
+    <div class="row mb-5">
+      <div class="col-12 text-center mb-4">
+        <h2 style="line-height: 1.4;">Why Choose TravelEase</h2>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-home fs-2 mb-3" style="color: #f2424d"></i>
+            <h3 class="h5">Verified Properties</h3>
+            <p>Quality accommodations vetted for your comfort and peace of mind</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-map-marked-alt fs-2 mb-3" style="color: #f2424d"></i>
+            <h3 class="h5">Easy Location</h3>
+            <p>Interactive maps to find the perfect location for your stay</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-star fs-2 mb-3" style="color: #f2424d"></i>
+            <h3 class="h5">Guest Reviews</h3>
+            <p>Authentic feedback from our verified community of travelers</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body text-center">
+            <i class="fas fa-shield-alt fs-2 mb-3" style="color: #f2424d"></i>
+            <h3 class="h5">Secure Booking</h3>
+            <p>Safe, transparent, and hassle-free reservation process</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="row mb-5 py-4 bg-light rounded">
+      <div class="col-12 text-center mb-4">
+        <h2>Our Community</h2>
+      </div>
+      <div class="col-md-4 text-center mb-3">
+        <h3 class="display-4 fw-bold" style="color: #f2424d">
+          <span class="properties-count"><%- propertyCount %></span>+
+        </h3>
+        <p class="text-muted">Unique Properties</p>
+      </div>
+      <div class="col-md-4 text-center mb-3">
+        <h3 class="display-4 fw-bold" style="color: #f2424d">
+          <span class="users-count"><%- userCount %></span>+
+        </h3>
+        <p class="text-muted">Happy Guests</p>
+      </div>
+      <div class="col-md-4 text-center mb-3">
+        <h3 class="display-4 fw-bold" style="color: #f2424d">
+          <span class="reviews-count"><%- reviewCount %></span>+
+        </h3>
+        <p class="text-muted">Guest Reviews</p>
+      </div>
+    </div>
+
+    <!-- Creator Section -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="mb-3">Created with ❤️</h2>
+        <p class="lead">Developed by Pranjal Singh</p>
+        <a href="https://github.com/prancodes" target="_blank" class="btn btn-outline-dark">
+          <i class="fab fa-github me-2"></i>Follow on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="mb-3">Ready to Start Your Journey?</h2>
+        <p class="lead mb-4">Life is short and the world is wide; let TravelEase be your trusted guide!</p>
+        <a href="/listings" class="btn me-2 mb-2 submit-btn">Explore Properties</a>
+        <a href="/signup" class="btn btn-outline-dark mb-2">Join TravelEase</a>
+      </div>
+    </div>
+  </div>
 </body>
