@@ -76,7 +76,7 @@ body{
     align-items: center;
     position: fixed;
     bottom: 0px;
-    padding: 0rem 4rem 0rem 4rem;
+    padding: 0rem 3rem 0rem 3rem;
     font-size: 0.9rem;
     background-color: #ebebeb;
     z-index: 100;
@@ -86,15 +86,23 @@ body{
     display: flex;
     gap: 1.2rem;
     font-size: 1.1rem;
+    order: 2;
+    position: relative;
+    left: -1.5rem;
 }
 
 .f-social i{
     cursor: pointer;
 }
 
+.f-copyright{
+    order: 1;
+}
+
 .f-links{
     display: flex;
     gap: 1.5rem;
+    order: 3;
 }
 
 .f-links a{
@@ -385,6 +393,10 @@ body{
     .show-func-btns form {
         width: 25%
     }
+
+    .f-social{
+        position: static;
+    }
 }
 
 @media (max-width : 768px){
@@ -406,6 +418,15 @@ body{
 
     .f-social i{
         font-size: medium;
+    }
+
+    .f-social{
+        order : 1;
+        position: static;
+    }
+
+    .f-copyright {
+        order: 2;
     }
 
     .containers{
