@@ -8,14 +8,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a id="explore-link" class="nav-link" href="/listings">Explore</a>
-          <a id="add-link" class="nav-link" href="/listings/add">Add Listing</a>
+          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link" href="/listings/add">Add Listing</a>
         </div>
-        <div class="navbar-nav ms-auto">
+        <div class="navbar-nav ms-auto pt-md-0" style="padding-top: 0.4rem;">
           <% if (!currUser) { %>
             <div class="d-flex align-items-center gap-3">
-              <a id="signup-link" class="btn btn-outline-success" href="/signup">SignUp</a>
-              <a id="login-link" class="btn btn-outline-success me-md-1" href="/login">Login</a>
+              <a class="btn btn-outline-success" href="/signup">SignUp</a>
+              <a class="btn btn-outline-success me-md-1" href="/login">Login</a>
             </div>
             <% } else { %>
               <div class="d-flex align-items-center gap-2">
