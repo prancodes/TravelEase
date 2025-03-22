@@ -1,5 +1,151 @@
 <% layout('/layouts/boilerplate') -%>
-  <body>
-    <h3>Hello Welcome to Travel Ease</h3>
-    <p>Pick up your destination and get yourself relaxed..</p>
-  </body>
+
+<head>
+  <style>
+    .containers{
+      margin: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="home-hero">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/9e/4c/37/welcomhotel-by-itc-hotels.jpg" 
+               class="home-carousel-img" alt="Luxury Stay">
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-5">
+            <h2 class="display-4 fw-bold">Start to enjoy unique places</h2>
+            <p class="fs-5">Discover top-rated accommodations crafted for unforgettable experiences</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="https://r1imghtlak.mmtcdn.com/0454473a68ab11e8957b0af4bba828c4.jpg" 
+               class="home-carousel-img" alt="Historic Villa">
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-5">
+            <h2 class="display-4 fw-bold">Great places to discover</h2>
+            <p class="fs-5">Explore handpicked properties in stunning locations worldwide</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/54/46/18/lemon-tree-premier-corbett.jpg" 
+               class="home-carousel-img" alt="Unique Stay">
+          <div class="carousel-caption d-flex flex-column justify-content-center h-100 pb-5">
+            <h2 class="display-4 fw-bold">Finally.. its time to relax</h2>
+            <p class="fs-5">Find your perfect getaway with our verified luxury stays</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <!-- Search Section -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-4">Find Your Perfect Stay</h2>
+        <div class="bg-white p-4 rounded-4 shadow-sm">
+          <form action="/listings" method="GET" class="d-flex gap-3">
+            <input type="text" name="location" class="form-control" placeholder="Where are you going?">
+            <button type="submit" class="btn submit-btn px-4">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="row mb-5">
+      <h2 class="text-center mb-2">Why Choose TravelEase</h2>
+      <p class="text-center text-muted mb-4">Experience the best in hospitality</p>
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded-4 text-center h-100">
+          <i class="fas fa-medal fs-1 mb-3" style="color: #fe424d"></i>
+          <h4>Verified Properties</h4>
+          <p class="text-muted mb-0">Every property is personally verified for quality and comfort</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded-4 text-center h-100">
+          <i class="fas fa-coins fs-1 mb-3" style="color: #fe424d"></i>
+          <h4>Best Price Guarantee</h4>
+          <p class="text-muted mb-0">Find the best deals and exclusive offers on stays</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded-4 text-center h-100">
+          <i class="fas fa-headset fs-1 mb-3" style="color: #fe424d"></i>
+          <h4>24/7 Support</h4>
+          <p class="text-muted mb-0">Our team is always here to help you with your bookings</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Properties -->
+    <div class="row mb-5">
+      <h2 class="text-center mb-4">Featured Properties</h2>
+      <div class="home-featured px-4">
+        <% if (featuredListings.length > 0) { %>
+          <% featuredListings.forEach(listing => { %>
+            <div class="home-listing-card bg-white rounded-4 overflow-hidden shadow-sm">
+              <img src="<%= listing.image.url %>" 
+                   alt="<%= listing.title %>"
+                   class="w-100 object-fit-cover" 
+                   style="height: 200px">
+              <div class="p-3">
+                <h5 class="mb-2"><%= listing.title %></h5>
+                <p class="text-muted mb-2">
+                  <i class="fas fa-map-marker-alt me-2"></i><%= listing.location %>
+                </p>
+                <p class="fw-bold" style="color: #fe424d">₹<%= listing.price %> / night</p>
+              </div>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <div class="col-12 text-center">
+            <p class="text-muted">No featured properties available at the moment.</p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <!-- Slogan Section -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <div class="py-5 px-4 rounded-4" style="background: linear-gradient(45deg, #fe424d0d, #fe424d1a)">
+          <h2 class="display-6 mb-3">Life is short and the world is wide</h2>
+          <p class="lead mb-0 fw-bold">Let TravelEase be your trusted guide!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <div class="py-5 px-4 rounded-4" style="background: linear-gradient(45deg, #fe424d0d, #fe424d1a)">
+          <h2>Ready to Start Your Journey?</h2>
+          <p class="lead mb-4">Find your perfect stay with TravelEase</p>
+          <a href="/listings" class="btn submit-btn btn-lg mb-2">Explore All Properties</a>
+          <a href="/signup" class="btn btn-outline-dark btn-lg">List Your Property</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

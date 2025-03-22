@@ -1,0 +1,130 @@
+.submit-btn {
+    background-color: #fe424d;
+    color: white;
+    transition: all 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e63e47;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.card:hover,
+.destination-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Home page specific styles */
+.home-hero {
+    height: 80vh;
+    overflow: hidden;
+    margin-top: -1rem;
+}
+
+.home-carousel-img {
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* Unique styles for home categories */
+.home-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.home-category-item {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s;
+}
+
+.home-category-item:hover {
+    transform: translateY(-5px);
+    color: #fe424d;
+}
+
+/* Featured listings specific styles */
+.home-featured {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.home-listing-card {
+    transition: transform 0.3s;
+}
+
+.home-listing-card:hover {
+    transform: translateY(-5px);
+}
+
+.city-card {
+    height: 280px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.city-card img {
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.city-card:hover img {
+    transform: scale(1.05);
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.city-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .city-card {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .city-card {
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-categories {
+        grid-template-columns: 1fr;
+    }
+    
+    .city-card {
+        height: 200px;
+    }
+    
+    .city-overlay h4 {
+        font-size: 1.25rem;
+    }
+    
+    .city-overlay p {
+        font-size: 0.875rem;
+    }
+}

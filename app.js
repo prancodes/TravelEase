@@ -89,8 +89,44 @@ app.use((req, res, next) => {
 });
 
 // Home route
-app.get("/", (req, res) => {
-  res.render("listings/home.ejs");
+app.get("/", async (req, res) => {
+  try {
+    const featuredListings = await Listing.find({})
+      .sort({ _id: -1 })
+      .limit(6);
+
+    // Get city counts
+    const cityCount = {
+      delhi: await Listing.countDocuments({ city: 'Delhi' }),
+      mumbai: await Listing.countDocuments({ city: 'Mumbai' }),
+      // Add more cities as needed
+    };
+
+    const categories = ['Mountain', 'Beach', 'Historic', 'Luxury', 'City', 'Nature'];
+    const categoryIcons = {
+      Mountain: 'fa-mountain',
+      Beach: 'fa-umbrella-beach',
+      Historic: 'fa-landmark',
+      Luxury: 'fa-crown',
+      City: 'fa-city',
+      Nature: 'fa-leaf'
+    };
+
+    res.render("listings/home.ejs", {
+      featuredListings,
+      cityCount,
+      categories,
+      categoryIcons
+    });
+  } catch (err) {
+    console.error("Error loading home page:", err);
+    res.render("listings/home.ejs", { 
+      featuredListings: [],
+      cityCount: {},
+      categories: [],
+      categoryIcons: {}
+    });
+  }
 });
 
 // Use routes
