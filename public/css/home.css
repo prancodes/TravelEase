@@ -27,7 +27,7 @@
     height: 80vh;
     width: 100%;
     object-fit: cover;
-    filter: brightness(0.6);
+    filter: brightness(0.7);
 }
 
 /* Unique styles for home categories */
@@ -126,5 +126,11 @@
     
     .city-overlay p {
         font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 340px) {
+    .home-featured {
+        padding: 0rem 0.5rem !important;
     }
 }
