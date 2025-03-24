@@ -60,7 +60,7 @@
   <!-- Main Content -->
   <div class="container mt-5">
     <!-- Search Section -->
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mb-5 animation">
       <div class="col-md-8 text-center">
         <h2 class="mb-4">Find Your Perfect Stay</h2>
         <div class="bg-white p-4 rounded-4 shadow-sm">
@@ -74,11 +74,11 @@
 
     <!-- Why Choose Us Section -->
     <div class="row mb-5">
-      <h2 class="text-center mb-2">Why Choose TravelEase</h2>
-      <p class="text-center text-muted mb-4">Experience the best in hospitality</p>
+      <h2 class="text-center mb-2 animation">Why Choose TravelEase</h2>
+      <p class="text-center text-muted mb-4 animation">Experience the best in hospitality</p>
       
       <div class="col-md-4 mb-4">
-        <div class="p-4 bg-light rounded-4 text-center h-100">
+        <div class="p-4 bg-light rounded-4 text-center h-100 animation-row">
           <i class="fas fa-medal fs-1 mb-3" style="color: #fe424d"></i>
           <h4>Verified Properties</h4>
           <p class="text-muted mb-0">Every property is personally verified for quality and comfort</p>
@@ -86,7 +86,7 @@
       </div>
       
       <div class="col-md-4 mb-4">
-        <div class="p-4 bg-light rounded-4 text-center h-100">
+        <div class="p-4 bg-light rounded-4 text-center h-100 animation-row">
           <i class="fas fa-coins fs-1 mb-3" style="color: #fe424d"></i>
           <h4>Best Price Guarantee</h4>
           <p class="text-muted mb-0">Find the best deals and exclusive offers on stays</p>
@@ -94,7 +94,7 @@
       </div>
       
       <div class="col-md-4 mb-4">
-        <div class="p-4 bg-light rounded-4 text-center h-100">
+        <div class="p-4 bg-light rounded-4 text-center h-100 animation-row">
           <i class="fas fa-headset fs-1 mb-3" style="color: #fe424d"></i>
           <h4>24/7 Support</h4>
           <p class="text-muted mb-0">Our team is always here to help you with your bookings</p>
@@ -104,11 +104,11 @@
 
     <!-- Featured Properties -->
     <div class="row mb-5">
-      <h2 class="text-center mb-4">Featured Properties</h2>
+      <h2 class="text-center mb-4 animation">Featured Properties</h2>
       <div class="home-featured px-4">
         <% if (featuredListings.length > 0) { %>
           <% featuredListings.forEach(listing => { %>
-            <div class="home-listing-card bg-white rounded-4 overflow-hidden shadow-sm">
+            <div class="home-listing-card bg-white rounded-4 overflow-hidden shadow-sm animation-row">
               <img src="<%= listing.image.url %>" 
                    alt="<%= listing.title %>"
                    class="w-100 object-fit-cover" 
@@ -123,7 +123,7 @@
             </div>
           <% }); %>
         <% } else { %>
-          <div class="col-12 text-center">
+          <div class="col-12 text-center animation-row">
             <p class="text-muted">No featured properties available at the moment.</p>
           </div>
         <% } %>
@@ -132,7 +132,7 @@
 
     <!-- Slogan Section -->
     <div class="row mb-5">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center animation">
         <div class="py-5 px-4 rounded-4" style="background: linear-gradient(45deg, #fe424d0d, #fe424d1a)">
           <h2 class="display-6 mb-3">Life is short and the world is wide</h2>
           <p class="lead mb-0 fw-bold">Let TravelEase be your trusted guide!</p>
@@ -142,7 +142,7 @@
 
     <!-- CTA Section -->
     <div class="row mb-5">
-      <div class="col-12 text-center">
+      <div class="col-12 text-center animation">
         <div class="py-5 px-4 rounded-4" style="background: linear-gradient(45deg, #fe424d0d, #fe424d1a)">
           <h2>Ready to Start Your Journey?</h2>
           <p class="lead mb-4">Find your perfect stay with TravelEase</p>
