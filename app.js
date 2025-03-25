@@ -95,22 +95,13 @@ app.get("/", async (req, res) => {
       .sort({ _id: -1 })
       .limit(3);
 
-    // Get city counts
-    const cityCount = {
-      delhi: await Listing.countDocuments({ city: 'Delhi' }),
-      mumbai: await Listing.countDocuments({ city: 'Mumbai' }),
-      // Add more cities as needed
-    };
-
     res.render("listings/home.ejs", {
       featuredListings,
-      cityCount,
     });
   } catch (err) {
     console.error("Error loading home page:", err);
     res.render("listings/home.ejs", { 
       featuredListings: [],
-      cityCount: {},
     });
   }
 });
