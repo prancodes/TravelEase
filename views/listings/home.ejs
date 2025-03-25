@@ -108,7 +108,8 @@
       <div class="home-featured px-4">
         <% if (featuredListings.length > 0) { %>
           <% featuredListings.forEach(listing => { %>
-            <div class="home-listing-card bg-white rounded-4 overflow-hidden shadow-sm animation-row">
+          <div class="home-listing-card bg-white rounded-4 overflow-hidden shadow-sm animation-row">
+            <a href="/listings/<%= listing._id.toString() %>" class="text-decoration-none text-dark">
               <img src="<%= listing.image.url %>" 
                    alt="<%= listing.title %>"
                    class="w-100 object-fit-cover" 
@@ -120,7 +121,8 @@
                 </p>
                 <p class="fw-bold" style="color: #fe424d">₹<%= listing.price %> / night</p>
               </div>
-            </div>
+            </a>
+          </div>
           <% }); %>
         <% } else { %>
           <div class="col-12 text-center animation-row">
