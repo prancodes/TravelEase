@@ -216,31 +216,36 @@ module.exports.renderCategory = async (req, res, next) => {
 
 // Search Listings
 module.exports.searchListings = async (req, res, next) => {
-  try {
-    let { q } = req.query;
-    
-    if (!q) {
-      return res.redirect("/listings");
-    }
+  let { q } = req.query;
 
-    // Create a case-insensitive search query
-    const searchRegex = new RegExp(q, "i");
-    
-    // Search in title, location, and country fields
-    const searchResults = await Listings.find({
-      $or: [
-        { title: searchRegex },
-        { location: searchRegex },
-        { country: searchRegex }
-      ]
-    }).sort({ _id: -1 });
-
-    res.render("listings/listings.ejs", { 
-      listings: searchResults,
-      // searchTerm: search 
-    });
-    
-  } catch (err) {
-    next(new CustomError(500, "Error performing search"));
+  if (!q || q.trim() === "") {
+    req.flash("error", "Please enter a valid search term");
+    return res.redirect("/listings");
   }
-};
+
+  // Create a case-insensitive search query
+  const searchRegex = new RegExp(q.trim(), "i");
+
+  const searchResults = await Listings.find({
+    $or: [
+      { title: searchRegex },
+      { description: searchRegex },
+      { location: searchRegex },
+      { country: searchRegex },
+      { category: searchRegex },
+    ],
+  }).sort({ _id: -1 });
+
+  res.locals.searchTerm = q.trim();
+
+  // if (searchResults.length === 0) {
+  //   req.flash("warning", `No results found for "${q}"`);
+  //   return res.redirect("/listings");
+  // }
+
+  res.render("listings/listings.ejs", {
+    listings: searchResults,
+    searchTerm: q.trim(),
+  });
+}
+
