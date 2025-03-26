@@ -64,9 +64,16 @@
       <div class="col-md-8 text-center">
         <h2 class="mb-4">Find Your Perfect Stay</h2>
         <div class="bg-white p-4 rounded-4 shadow-sm">
-          <form action="/listings/search" method="GET" class="d-flex gap-3">
-            <input type="text" name="q" class="form-control" placeholder="Where are you going?">
-            <button type="submit" class="btn submit-btn px-4">Search</button>
+          <form action="/listings/search" method="GET" class="d-flex flex-column flex-md-row gap-3 needs-validation" novalidate>
+            <div class="col-md-10">
+              <input type="text" name="q" class="form-control" placeholder="Where are you going?" value="<%= locals.searchTerm || '' %>" required>
+                <div class="invalid-feedback">
+                  Please provide a valid search term.
+                </div>
+            </div>
+            <div>
+              <button type="submit" class="btn submit-btn px-4">Search</button>
+            </div>
           </form>
         </div>
       </div>
@@ -75,7 +82,7 @@
     <!-- Why Choose Us Section -->
     <div class="row mb-5">
       <h2 class="text-center mb-2 animation">Why Choose TravelEase</h2>
-      <p class="text-center text-muted mb-4 animation">Experience the best in hospitality</p>
+      <p class="text-center text-muted mb-4 animation">Discover comfort and luxury at every destination</p>
       
       <div class="col-md-4 mb-4">
         <div class="p-4 bg-light rounded-4 text-center h-100 animation-row">
