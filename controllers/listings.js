@@ -213,3 +213,34 @@ module.exports.renderCategory = async (req, res, next) => {
     category: ctgName,
   });
 };
+
+// Search Listings
+module.exports.searchListings = async (req, res, next) => {
+  try {
+    let { q } = req.query;
+    
+    if (!q) {
+      return res.redirect("/listings");
+    }
+
+    // Create a case-insensitive search query
+    const searchRegex = new RegExp(q, "i");
+    
+    // Search in title, location, and country fields
+    const searchResults = await Listings.find({
+      $or: [
+        { title: searchRegex },
+        { location: searchRegex },
+        { country: searchRegex }
+      ]
+    }).sort({ _id: -1 });
+
+    res.render("listings/listings.ejs", { 
+      listings: searchResults,
+      // searchTerm: search 
+    });
+    
+  } catch (err) {
+    next(new CustomError(500, "Error performing search"));
+  }
+};
