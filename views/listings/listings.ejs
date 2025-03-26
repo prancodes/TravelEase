@@ -1,8 +1,14 @@
 <% layout('/layouts/boilerplate') -%>
 
 <body>
-  <!-- <h4 style="text-align: center; padding: 1rem"><b>All Listings</b></h4> -->
-
+  <% if (typeof searchTerm !== 'undefined') { %>
+      <div class="col-12">
+        <h3 class="mb-4">Search results for: "<%= searchTerm %>"</h3>
+        <% if (listings.length === 0) { %>
+          <p class="text-muted">No results found for "<%= searchTerm %>"</p>
+        <% } %>
+      </div>
+  <% } %>
   <div class="all-listings-section">
   <div class="all-listings">
     <% for (let list of listings) { %>
