@@ -431,6 +431,7 @@ body{
 
     .containers{
         margin: 0rem 1rem 0rem 1rem;
+        min-height: 65vh;
     }
 
     .form-add-in{

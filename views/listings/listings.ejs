@@ -1,31 +1,36 @@
 <% layout('/layouts/boilerplate') -%>
 
 <body>
-  <% if (typeof searchTerm !== 'undefined') { %>
-      <div class="col-12">
-        <h3 class="mb-4">Search results for: "<%= searchTerm %>"</h3>
-        <% if (listings.length === 0) { %>
-          <p class="text-muted">No results found for "<%= searchTerm %>"</p>
-        <% } %>
-      </div>
-  <% } %>
-  <div class="all-listings-section">
-  <div class="all-listings">
-    <% for (let list of listings) { %>
-    <div class="card listings-card">
-      <a href="/listings/<%= list._id %>" class="card-link">
-        <div class="img-card">
-          <img src="<%= list.image.url %>" class="card-img-top" alt="img" />
-        </div>
-        <div class="card-body">
-          <p class="card-text">
-            <b><%= list.title %></b><br />
-            &#8377; <%= list.price.toLocaleString("en-IN") %> / night
-          </p>
-        </div>
-      </a>
-    </div>
+  <% if (typeof searchTerm !=='undefined' ) { %>
+  <div class="col-12">
+    <h3 class="mb-3">Search results for: "<%= searchTerm %>"</h3>
+      <% if (listings.length > 0) { %>
+      <h6 class="text-muted"><%= listings.length %> result<%= listings.length> 1 ? 's' : '' %> found </h6>
+      <% } %>
+    <% if (listings.length === 0) { %>
+    <h5 class="text-muted">No listings available.</h5>
     <% } %>
   </div>
+  <% } %>
+  <div class="all-listings-section">
+    <div class="all-listings">
+      <% for (let list of listings) { %>
+      <div class="card listings-card">
+        <a href="/listings/<%= list._id %>" class="card-link">
+          <div class="img-card">
+            <img src="<%= list.image.url %>" class="card-img-top" alt="img" />
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              <b>
+                <%= list.title %>
+              </b><br />
+              &#8377; <%= list.price.toLocaleString("en-IN") %> / night
+            </p>
+          </div>
+        </a>
+      </div>
+      <% } %>
+    </div>
   </div>
 </body>
