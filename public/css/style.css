@@ -342,7 +342,27 @@ body{
     margin-bottom: 1.8rem;
 }
 
+/* Navbar search styling */
+.navbar .input-group {
+  width: 300px;
+  padding: 0.5rem 0rem;
+}
 
+.navbar .input-group .form-control:focus {
+  box-shadow: none;
+  border-color: #fe424d;
+}
+
+.navbar .btn-search {
+  border-color: #fe424d;
+  background-color: #fe424d;
+  color: white;
+}
+
+.navbar .btn-search:hover {
+    background-color: #e6404b;
+    color: white;
+}
 
 /* -------------------------------- Media Queries --------------------------- */
 
@@ -404,6 +424,15 @@ body{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
+    }
+
+    .navbar .input-group {
+        width: 100%;
+        margin: 1rem 0;
+    }
+      
+    .navbar form {
+        width: 100%;
     }
 
     .footer{
