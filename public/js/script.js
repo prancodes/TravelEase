@@ -24,14 +24,21 @@
 // JavaScript to add 'active' class based on the current URL
 document.addEventListener("DOMContentLoaded", function () {
   const currentPath = window.location.pathname;
-  if (currentPath === "/listings") {
-    document.getElementById("explore-link").classList.add("active");
-  } else if (currentPath === "/listings/add") {
-    document.getElementById("add-link").classList.add("active");
-  } else if (currentPath === "/signup") {
-    document.getElementById("signup-link").classList.add("active");
-  } else if (currentPath === "/login") {
-    document.getElementById("login-link").classList.add("active");
+  
+  // Add null checks before accessing elements
+  const exploreLink = document.getElementById("explore-link");
+  const addLink = document.getElementById("add-link");
+  const signupLink = document.getElementById("signup-link");
+  const loginLink = document.getElementById("login-link");
+
+  if (currentPath === "/listings" && exploreLink) {
+    exploreLink.classList.add("active");
+  } else if (currentPath === "/listings/add" && addLink) {
+    addLink.classList.add("active");
+  } else if (currentPath === "/signup" && signupLink) {
+    signupLink.classList.add("active");
+  } else if (currentPath === "/login" && loginLink) {
+    loginLink.classList.add("active");
   }
 
   // Add active class for category links
