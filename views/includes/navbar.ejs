@@ -1,8 +1,9 @@
 <div class="bg-body-light sticky-top navbar-Tab">
   <nav class="navbar navbar-expand-md bg-body-light border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand" style="color: #fe424d" href="/"><i
-          class="fa-regular fa-compass"></i>&nbsp;&nbsp;TravelEase</a>
+      <a class="navbar-brand" style="color: #fe424d" href="/">
+        <i class="fa-regular fa-compass"></i>&nbsp;&nbsp;TravelEase
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,6 +12,18 @@
           <a class="nav-link" href="/listings">Explore</a>
           <a class="nav-link" href="/listings/add">Add Listing</a>
         </div>
+        
+        <!-- Add Search Form -->
+        <form class="d-flex mx-auto" action="/listings/search" method="GET">
+          <div class="input-group my-0">
+            <input type="search" name="q" class="form-control rounded-end-0 rounded-pill ps-md-3" placeholder="Search destinations..."
+              required>
+            <button class="btn btn-search rounded-pill rounded-start-0" type="submit">
+              <i class="fas fa-search px-1"></i>
+            </button>
+          </div>
+        </form>
+
         <div class="navbar-nav ms-auto pt-md-0" style="padding-top: 0.4rem;">
           <% if (!currUser) { %>
             <div class="d-flex align-items-center gap-3">
