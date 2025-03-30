@@ -238,11 +238,6 @@ module.exports.searchListings = async (req, res, next) => {
 
   res.locals.searchTerm = q.trim();
 
-  // if (searchResults.length === 0) {
-  //   req.flash("warning", `No results found for "${q}"`);
-  //   return res.redirect("/listings");
-  // }
-
   res.render("listings/listings.ejs", {
     listings: searchResults,
     searchTerm: q.trim(),
