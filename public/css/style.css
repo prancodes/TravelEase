@@ -364,7 +364,31 @@ body{
     color: white;
 }
 
-/* Auth button gradient styling */
+/* Auth Form's Password Field */
+.input-group #togglePassword {
+  border-color: #dee2e6;
+  background: transparent;
+  margin-left: -1px;
+}
+
+.input-group #togglePassword:active {
+  color: #fe424d;
+  box-shadow: none;
+  background: transparent;
+}
+
+.fa-eye{
+    color: #fe424d;
+}
+
+/* Remove password reveal button in Edge/IE */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+
+/* Navbar Auth button gradient styling */
 .navbar-nav .btn-gradient {
   background: linear-gradient(45deg, #fe424d, #ff6b6b);
   color: white !important;

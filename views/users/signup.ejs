@@ -22,9 +22,14 @@
 
         <div class="mb-4">
           <label for="pass" class="form-label">Password</label>
-          <input type="password" id="pass" name="user[password]" placeholder="Create new password" class="form-control" required />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Password should be upto 8 characters</div>
+          <div class="input-group">
+            <input type="password" id="pass" name="user[password]" placeholder="Enter password" class="form-control" required />
+            <button class="btn rounded-end-2" type="button" id="togglePassword">
+              <i class="fa-solid fa-eye-slash"></i>
+            </button>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a secure password</div>
+          </div>
         </div>
 
         <div class="submit-form">
