@@ -9,8 +9,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link explore" href="/listings">Explore</a>
-          <a class="nav-link" href="/listings/add">Add Listing</a>
+          <a class="nav-link explore" id="explore-link" href="/listings">Explore</a>
+          <a class="nav-link" id="add-link" href="/listings/add">Add Listing</a>
         </div>
         
         <!-- Search Form -->
@@ -32,7 +32,7 @@
             </div>
             <% } else { %>
               <div class="d-flex align-items-center gap-2">
-                <a class="nav-link">@<%= currUser.username %></a>
+                <a class="nav-link" id="user-link">@<%= currUser.username %></a>
                 <a class="btn btn-outline-danger me-1 fw-medium" href="/logout">Logout</a>
               </div>
               <% } %>
