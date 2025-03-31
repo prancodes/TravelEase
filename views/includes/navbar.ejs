@@ -9,16 +9,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="/listings">Explore</a>
+          <a class="nav-link explore" href="/listings">Explore</a>
           <a class="nav-link" href="/listings/add">Add Listing</a>
         </div>
         
-        <!-- Add Search Form -->
+        <!-- Search Form -->
         <form class="d-flex mx-auto" action="/listings/search" method="GET">
-          <div class="input-group my-0">
-            <input type="search" name="q" class="form-control rounded-end-0 rounded-pill ps-md-3" placeholder="Search destinations..."
+          <div class="input-group my-0 py-md-0">
+            <input type="search" name="q" class="form-control p-2 rounded-end-0 rounded-pill ps-md-3" placeholder="Search destinations..."
               required>
-            <button class="btn btn-search rounded-pill rounded-start-0" type="submit">
+            <button class="btn btn-search rounded-start-0 rounded-pill" type="submit">
               <i class="fas fa-search px-1"></i>
             </button>
           </div>
@@ -27,13 +27,13 @@
         <div class="navbar-nav ms-auto pt-md-0" style="padding-top: 0.4rem;">
           <% if (!currUser) { %>
             <div class="d-flex align-items-center gap-3">
-              <a class="btn btn-outline-success" href="/signup">SignUp</a>
-              <a class="btn btn-outline-success me-md-1" href="/login">Login</a>
+              <a class="btn btn-outline-gradient fw-medium" href="/signup">SignUp</a>
+              <a class="btn btn-gradient me-md-1 fw-medium" href="/login">Login</a>
             </div>
             <% } else { %>
               <div class="d-flex align-items-center gap-2">
                 <a class="nav-link">@<%= currUser.username %></a>
-                <a class="btn btn-outline-danger me-1" href="/logout">Logout</a>
+                <a class="btn btn-outline-danger me-1 fw-medium" href="/logout">Logout</a>
               </div>
               <% } %>
         </div>
