@@ -28,18 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add null checks before accessing elements
   const exploreLink = document.getElementById("explore-link");
   const addLink = document.getElementById("add-link");
-  const signupLink = document.getElementById("signup-link");
-  const loginLink = document.getElementById("login-link");
+  // const userLink = document.getElementById("user-link");
 
   if (currentPath === "/listings" && exploreLink) {
     exploreLink.classList.add("active");
   } else if (currentPath === "/listings/add" && addLink) {
     addLink.classList.add("active");
-  } else if (currentPath === "/signup" && signupLink) {
-    signupLink.classList.add("active");
-  } else if (currentPath === "/login" && loginLink) {
-    loginLink.classList.add("active");
-  }
+  } 
+  // else if (currentPath === "/user" && userLink) {
+  //   signupLink.classList.add("active");
+  // }
 
   // Add active class for category links
   const categoryLinks = document.querySelectorAll(".nav-link.nav-tabs");
@@ -93,4 +91,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       });
   });
+});
+
+
+// Password View toggle function
+const togglePass = document.querySelector("#togglePassword");
+const password = document.querySelector("#pass");
+
+togglePass.addEventListener("click", () => {
+  // Toggle type
+  const type = password.getAttribute("type") === "password" ? "text" : "password";
+  password.setAttribute("type", type);
+
+  // Toggle icon
+  const icon = togglePass.querySelector("i");
+  icon.classList.toggle('fa-eye-slash');
+  icon.classList.toggle('fa-eye');
 });
