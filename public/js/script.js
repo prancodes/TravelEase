@@ -28,17 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add null checks before accessing elements
   const exploreLink = document.getElementById("explore-link");
   const addLink = document.getElementById("add-link");
-  // const userLink = document.getElementById("user-link");
+  const userLink = document.getElementById("user-link");
 
   if (currentPath === "/listings" && exploreLink) {
     exploreLink.classList.add("active");
   } else if (currentPath === "/listings/add" && addLink) {
     addLink.classList.add("active");
-  } 
-  // else if (currentPath === "/user" && userLink) {
-  //   signupLink.classList.add("active");
-  // }
-
+  } else if (currentPath === `/users/${userLink.textContent.slice(1)}` && userLink) {
+    userLink.classList.add("active");
+  }
+  // console.log(userLink.textContent.slice(1));
+  
   // Add active class for category links
   const categoryLinks = document.querySelectorAll(".nav-link.nav-tabs");
   categoryLinks.forEach((link) => {
@@ -93,18 +93,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // Password View toggle function
-const togglePass = document.querySelector("#togglePassword");
-const password = document.querySelector("#pass");
+document.addEventListener("DOMContentLoaded", function() {
+  const togglePass = document.querySelector("#togglePassword");
+  const password = document.querySelector("#pass");
 
-togglePass.addEventListener("click", () => {
-  // Toggle type
-  const type = password.getAttribute("type") === "password" ? "text" : "password";
-  password.setAttribute("type", type);
+  if (togglePass && password) {
+    togglePass.addEventListener("click", () => {
+      // Toggle type
+      const type = password.getAttribute("type") === "password" ? "text" : "password";
+      password.setAttribute("type", type);
 
-  // Toggle icon
-  const icon = togglePass.querySelector("i");
-  icon.classList.toggle('fa-eye-slash');
-  icon.classList.toggle('fa-eye');
+      // Toggle icon
+      const icon = togglePass.querySelector("i");
+      icon.classList.toggle('fa-eye-slash');
+      icon.classList.toggle('fa-eye');
+    });
+  }
 });

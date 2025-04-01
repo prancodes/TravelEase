@@ -32,7 +32,7 @@
             </div>
             <% } else { %>
               <div class="d-flex align-items-center gap-2">
-                <a class="nav-link" id="user-link">@<%= currUser.username %></a>
+                <a class="nav-link" id="user-link" href="/users/<%= currUser.username %>">@<%= currUser.username %></a>
                 <a class="btn btn-outline-danger me-1 fw-medium" href="/logout">Logout</a>
               </div>
               <% } %>

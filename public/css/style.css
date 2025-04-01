@@ -421,6 +421,37 @@ input::-ms-clear {
   box-shadow: 0 2px 4px rgba(254, 66, 77, 0.2) !important;
 }
 
+
+/* User Profile Styling */
+.avatar-lg {
+    width: 80px;
+    height: 80px;
+}
+
+.bg-gradient {
+    background: linear-gradient(45deg, #fe424d, #ff6b6b);
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.btn-outline-primary {
+    border-color: #fe424d;
+    color: #fe424d;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fe424d;
+    border-color: #fe424d;
+    color: white;
+}
+
 /* -------------------------------- Media Queries --------------------------- */
 
 @media (max-width : 1110px){
