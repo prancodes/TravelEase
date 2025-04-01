@@ -5,13 +5,18 @@ const passport = require("passport");
 const { saveRedirectUrl } = require("../middlewares/authenticate");
 const userController = require("../controllers/users");
 
+// ---------------- User's Profile ------------------
+router.get("/users/:username", wrapAsync(userController.showUserProfile));
+
 // Signup routes
-router.route("/signup")
+router
+  .route("/signup")
   .get(userController.renderSignUpForm)
   .post(wrapAsync(userController.registerNewUser));
 
 // Login routes
-router.route("/login")
+router
+  .route("/login")
   .get(userController.renderLoginForm)
   .post(
     saveRedirectUrl, // Middleware to save the redirected URL into locals
