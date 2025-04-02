@@ -438,7 +438,7 @@ input::-ms-clear {
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; */
 }
 
 .btn-outline-primary {
