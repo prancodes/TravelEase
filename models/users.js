@@ -11,6 +11,18 @@ const userSchema = new Schema({
         lowercase: true,
         index: true
     },
+    listings: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Listings'
+    }],
+    reviews: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Review'
+    }],
+    createdAt: {
+      type: Date,
+      default: Date.now
+    }
 });
 
 // Plugin for handling user authentication
