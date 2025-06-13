@@ -1,6 +1,8 @@
 # Ignore node_modules directory
 node_modules/
 
+package-lock.json
+
 # Ignore log files
 *.log
 
@@ -21,3 +23,4 @@ Thumbs.db
 # Ignore IDE-specific files
 .vscode/
 .idea/
+.vercel

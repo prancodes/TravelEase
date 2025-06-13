@@ -24,10 +24,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pranjal Singh",
   "license": "ISC",
-  "description": ""
+  "description": "TravelEase is a full-stack web application designed to simplify travel planning and booking."
 }

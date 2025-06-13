@@ -32,6 +32,8 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: true }));
 app.engine("ejs", ejsMate);
 
+const port = process.env.PORT || 3000;
+
 const MONGO_URL = process.env.ATLAS_URL;
 main()
   .then(() => {
@@ -153,7 +155,11 @@ app.use((req, res, next) => {
   res.status(404).render("./layouts/error.ejs", { message });
 });
 
-app.listen((port = 3000), () => {
-  console.log("Server is listening at port", port);
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Server is listening at http://localhost:${port}`);
+  });
+}
 
+// Export for Vercel deployment
+module.exports = app;
