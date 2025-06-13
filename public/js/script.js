@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("copyLink").addEventListener("click", function () {
-    const url = "https://travelease.up.railway.app";
+    const url = "https://traveleasego.vercel.app";
 
     navigator.clipboard
       .writeText(url)

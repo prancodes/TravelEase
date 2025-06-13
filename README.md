@@ -2,7 +2,7 @@
 
 TravelEase is a full-stack web application designed to simplify travel planning and booking. Users can browse, list, and book properties, leave reviews, and manage their travel experiences seamlessly.
 
-###  [Visit TravelEase 🌍✈️](https://travelease.up.railway.app)
+###  [Visit TravelEase 🌍✈️](https://traveleasego.vercel.app)
 
 
 ## Table of Contents 📑
